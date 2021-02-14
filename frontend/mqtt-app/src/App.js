@@ -52,7 +52,7 @@ function App() {
                         return (
                             <>
                             <p> fields : {item} </p>
-                        <p> value : {values[0][idx]} </p>
+                        <p> value : {values[idx]} </p>
                             </>
                         );
                     })
