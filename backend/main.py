@@ -50,13 +50,11 @@ def make_message(rand_randge: tuple) -> dict:
             "engineLoad"
         ],
         "values": [
-            [
                 time.time(),
                 randint(*rand_randge),
                 randint(*rand_randge),
                 randint(*rand_randge),
                 randint(*rand_randge)
-            ]
         ]
     }
 

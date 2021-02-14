@@ -5,7 +5,7 @@ import React, {useEffect, useState} from 'react';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
+import {LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer} from 'recharts';
 
 function init(awsConfig) {
     Amplify.configure({
@@ -41,6 +41,7 @@ function App() {
     init(awsConfig);
     const [fields, setFields] = useState([])
     const [values, setValues] = useState([0, 0, 0, 0, 0])
+    const [provider, setProvider] = useState("");
     const classes = useStyles();
 
     useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
             next: (data) => {
                 setFields(data.value.fields);
                 setValues(data.value.values);
+                setProvider(JSON.stringify(data));
                 console.log(data);
             },
             error: (error) => console.log(error)
@@ -67,12 +69,18 @@ function App() {
                         <Grid item xs={4}>
                             <Paper className={classes.paper} variant="outlined" square>
                                 <p> {item} </p>
-                                <p> {values[0][idx]} </p>
+                                <p> {values[idx]} </p>
                             </Paper>
                         </Grid>
                     );
                 })
             }
+            <Grid item xs={12}>
+                <Paper className={classes.paper} variant="outlined" square>
+                    <p> This is provider context </p>
+                    <p> {provider} </p>
+                </Paper>
+            </Grid>
         </Grid>
     );
 }
