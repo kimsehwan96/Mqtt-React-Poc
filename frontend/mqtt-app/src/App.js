@@ -1,7 +1,11 @@
 import Amplify, {PubSub} from 'aws-amplify';
 import {AWSIoTProvider} from '@aws-amplify/pubsub/lib/Providers';
 import awsConfig from './awsConfig.json'
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 
 function init(awsConfig) {
     Amplify.configure({
@@ -21,11 +25,23 @@ function init(awsConfig) {
 
 const topic = 'app/test' //우리가 임의로 지정 할 수 있는 mqtt subscribe 토픽
 
-function App() {
-    init(awsConfig);
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.primary,
+    },
+}));
 
+function App() {
+
+    init(awsConfig);
     const [fields, setFields] = useState([])
     const [values, setValues] = useState([0, 0, 0, 0, 0])
+    const classes = useStyles();
 
     useEffect(() => {
         PubSub.subscribe('app/test', {
@@ -40,26 +56,25 @@ function App() {
         })
     })
 
-
     return (
-        <div className="App">
-            <header className="App-header">
-                Hello App
-            </header>
-            <>
-                {
-                    fields.map((item, idx) => {
-                        return (
-                            <>
-                            <p> fields : {item} </p>
-                        <p> value : {values[0][idx]} </p>
-                            </>
-                        );
-                    })
-                }
-            </>
-        </div>
+        <Grid container spacing={3}>
+            <Grid item xs={12}>
+                <Paper className={classes.paper}> Hello world </Paper>
+            </Grid>
+            {
+                fields.map((item, idx) => {
+                    return (
+                        <Grid item xs={4}>
+                            <Paper className={classes.paper} variant="outlined" square>
+                                <p> fields : {item} </p>
+                                <p> value : {values[0][idx]} </p>
+                            </Paper>
+                        </Grid>
+                    );
+                })
+            }
+        </Grid>
     );
 }
 
-export default App;
+export default React.memo(App);
