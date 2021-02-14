@@ -25,7 +25,7 @@ function App() {
     init(awsConfig);
 
     const [fields, setFields] = useState([])
-    const [values, setValues] = useState([])
+    const [values, setValues] = useState([0, 0, 0, 0, 0])
 
     useEffect(() => {
         PubSub.subscribe('app/test', {
@@ -48,11 +48,10 @@ function App() {
             <>
                 {
                     fields.map((item, idx) => {
-                        console.log(values)
                         return (
                             <>
                             <p> fields : {item} </p>
-                        <p> value : {values[idx]} </p>
+                        <p> value : {values[0][idx]} </p>
                             </>
                         );
                     })
