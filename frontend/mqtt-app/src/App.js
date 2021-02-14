@@ -36,6 +36,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const getTime = (unixTimestamp) => new Date((unixTimestamp + 3600 * 9) * 1000) //for korean time
+
 function App() {
 
     init(awsConfig);
@@ -69,7 +71,7 @@ function App() {
                         <Grid item xs={4}>
                             <Paper className={classes.paper} variant="outlined" square>
                                 <p> {item} </p>
-                                <p> {values[idx]} </p>
+                                <p> {(item === "timestamp") ? JSON.stringify(getTime(values[idx])) : values[idx]} </p>
                             </Paper>
                         </Grid>
                     );
