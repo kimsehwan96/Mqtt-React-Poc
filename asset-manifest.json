@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Mqtt-React-Poc/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/Mqtt-React-Poc/static/js/main.5316bd57.chunk.js",
-    "main.js.map": "/Mqtt-React-Poc/static/js/main.5316bd57.chunk.js.map",
+    "main.js": "/Mqtt-React-Poc/static/js/main.ea7e4b54.chunk.js",
+    "main.js.map": "/Mqtt-React-Poc/static/js/main.ea7e4b54.chunk.js.map",
     "runtime-main.js": "/Mqtt-React-Poc/static/js/runtime-main.066355a2.js",
     "runtime-main.js.map": "/Mqtt-React-Poc/static/js/runtime-main.066355a2.js.map",
     "static/js/2.486a0a4e.chunk.js": "/Mqtt-React-Poc/static/js/2.486a0a4e.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.066355a2.js",
     "static/js/2.486a0a4e.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.5316bd57.chunk.js"
+    "static/js/main.ea7e4b54.chunk.js"
   ]
 }
