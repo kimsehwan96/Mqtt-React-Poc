@@ -34,6 +34,7 @@ function App() {
             next: (data) => {
                 setFields(data.value.fields);
                 setValues(data.value.values);
+                console.log(data);
             },
             error: (error) => console.log(error)
         })
