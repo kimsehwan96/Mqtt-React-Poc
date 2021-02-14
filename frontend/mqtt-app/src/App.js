@@ -66,8 +66,8 @@ function App() {
                     return (
                         <Grid item xs={4}>
                             <Paper className={classes.paper} variant="outlined" square>
-                                <p> fields : {item} </p>
-                                <p> value : {values[0][idx]} </p>
+                                <p> {item} </p>
+                                <p> {values[0][idx]} </p>
                             </Paper>
                         </Grid>
                     );
