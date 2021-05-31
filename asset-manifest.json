@@ -1,22 +1,17 @@
 {
   "files": {
-    "main.css": "/Mqtt-React-Poc/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/Mqtt-React-Poc/static/js/main.ea7e4b54.chunk.js",
-    "main.js.map": "/Mqtt-React-Poc/static/js/main.ea7e4b54.chunk.js.map",
-    "runtime-main.js": "/Mqtt-React-Poc/static/js/runtime-main.066355a2.js",
-    "runtime-main.js.map": "/Mqtt-React-Poc/static/js/runtime-main.066355a2.js.map",
-    "static/js/2.486a0a4e.chunk.js": "/Mqtt-React-Poc/static/js/2.486a0a4e.chunk.js",
-    "static/js/2.486a0a4e.chunk.js.map": "/Mqtt-React-Poc/static/js/2.486a0a4e.chunk.js.map",
-    "static/js/3.42ecd257.chunk.js": "/Mqtt-React-Poc/static/js/3.42ecd257.chunk.js",
-    "static/js/3.42ecd257.chunk.js.map": "/Mqtt-React-Poc/static/js/3.42ecd257.chunk.js.map",
+    "main.js": "/Mqtt-React-Poc/static/js/main.cc662559.chunk.js",
+    "main.js.map": "/Mqtt-React-Poc/static/js/main.cc662559.chunk.js.map",
+    "runtime-main.js": "/Mqtt-React-Poc/static/js/runtime-main.5f2ec2e4.js",
+    "runtime-main.js.map": "/Mqtt-React-Poc/static/js/runtime-main.5f2ec2e4.js.map",
+    "static/js/2.79e123f8.chunk.js": "/Mqtt-React-Poc/static/js/2.79e123f8.chunk.js",
+    "static/js/2.79e123f8.chunk.js.map": "/Mqtt-React-Poc/static/js/2.79e123f8.chunk.js.map",
     "index.html": "/Mqtt-React-Poc/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/Mqtt-React-Poc/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.486a0a4e.chunk.js.LICENSE.txt": "/Mqtt-React-Poc/static/js/2.486a0a4e.chunk.js.LICENSE.txt"
+    "static/js/2.79e123f8.chunk.js.LICENSE.txt": "/Mqtt-React-Poc/static/js/2.79e123f8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.066355a2.js",
-    "static/js/2.486a0a4e.chunk.js",
-    "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.ea7e4b54.chunk.js"
+    "static/js/runtime-main.5f2ec2e4.js",
+    "static/js/2.79e123f8.chunk.js",
+    "static/js/main.cc662559.chunk.js"
   ]
 }
