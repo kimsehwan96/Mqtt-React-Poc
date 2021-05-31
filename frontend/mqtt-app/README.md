@@ -1,4 +1,22 @@
-# prerequisites
+# AWS Mqtt React App (RealTime Graph)
+
+React앱을 AWS Mqtt  브로커에 연결하여 데이터를 시각화 하는 데모 앱
+
+github : https://github.com/kimsehwan96/Mqtt-React-Poc
+
+demo app : https://kimsehwan96.github.io/Mqtt-React-Poc/
+
+
+## How to test?
+
+`git clone https://github.com/kimsehwan96/Mqtt-React-Poc.git`
+
+`cd Mqtt-React-Poc`
+`cd ./frontend/mqtt-app`
+`yarn install`
+`yarn start`
+
+## prerequisites
 
 - `npm install aws-amplify`
 
