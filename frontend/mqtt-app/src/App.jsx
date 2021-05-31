@@ -1,11 +1,12 @@
 import Amplify, {PubSub} from 'aws-amplify';
 import {AWSIoTProvider} from '@aws-amplify/pubsub/lib/Providers';
 import awsConfig from './awsConfig.json'
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, Suspense} from 'react';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import {LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer} from 'recharts';
+import styled from "styled-components";
+import RealTimeChart from './components/RealTimeChart';
 
 function init(awsConfig) {
     Amplify.configure({
@@ -61,22 +62,29 @@ function App() {
     })
 
     return (
+        <Suspense fallback={<div>Loading....</div>}>
         <Grid container spacing={3}>
             <Grid item xs={12}>
                 <Paper className={classes.paper}> Hello world </Paper>
             </Grid>
             {
                 fields.map((item, idx) => {
-                    return (
+                    return(
+                        (item === "timestamp") ? null :
                         <Grid item xs={4}>
-                            <Paper className={classes.paper} variant="outlined" square>
-                                <p> {item} </p>
-                                <p> {(item === "timestamp") ? JSON.stringify(getTime(values[idx])) : values[idx]} </p>
-                            </Paper>
+                            <RealTimeChartWrap>
+                            <RealTimeChart
+                                title={item}
+                                value={values[idx]}
+                                time={Date.now()}
+                            />
+                            </RealTimeChartWrap>
                         </Grid>
-                    );
+                    )
                 })
             }
+
+
             <Grid item xs={12}>
                 <Paper className={classes.paper} variant="outlined" square>
                     <p> This is provider context </p>
@@ -84,7 +92,15 @@ function App() {
                 </Paper>
             </Grid>
         </Grid>
+        </Suspense>
     );
 }
 
 export default React.memo(App);
+
+const RealTimeChartWrap = styled.div`
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    `;
