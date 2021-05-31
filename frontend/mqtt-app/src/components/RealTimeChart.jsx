@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Line } from 'react-chartjs-2';
+import React, {useState} from "react";
+import {Line} from 'react-chartjs-2';
 import 'chartjs-plugin-streaming';
 
 const RealTimeChart = ({
@@ -7,7 +7,7 @@ const RealTimeChart = ({
                            time,
                            value
                        }) => {
-    const [ dataArray ] = useState([]);
+    const [dataArray] = useState([]);
 
     const data = {
         labels: [],
@@ -47,7 +47,7 @@ const RealTimeChart = ({
         }
     }
 
-    return(
+    return (
         <div>
             <Line
                 width={350}

@@ -63,35 +63,35 @@ function App() {
 
     return (
         <Suspense fallback={<div>Loading....</div>}>
-        <Grid container spacing={3}>
-            <Grid item xs={12}>
-                <Paper className={classes.paper}> Hello world </Paper>
-            </Grid>
-            {
-                fields.map((item, idx) => {
-                    return(
-                        (item === "timestamp") ? null :
-                        <Grid item xs={4}>
-                            <RealTimeChartWrap>
-                            <RealTimeChart
-                                title={item}
-                                value={values[idx]}
-                                time={Date.now()}
-                            />
-                            </RealTimeChartWrap>
-                        </Grid>
-                    )
-                })
-            }
+            <Grid container spacing={3}>
+                <Grid item xs={12}>
+                    <Paper className={classes.paper}> Hello world </Paper>
+                </Grid>
+                {
+                    fields.map((item, idx) => {
+                        return (
+                            (item === "timestamp") ? null :
+                                <Grid item xs={4}>
+                                    <RealTimeChartWrap>
+                                        <RealTimeChart
+                                            title={item}
+                                            value={values[idx]}
+                                            time={Date.now()}
+                                        />
+                                    </RealTimeChartWrap>
+                                </Grid>
+                        )
+                    })
+                }
 
 
-            <Grid item xs={12}>
-                <Paper className={classes.paper} variant="outlined" square>
-                    <p> This is provider context </p>
-                    <p> {provider} </p>
-                </Paper>
+                <Grid item xs={12}>
+                    <Paper className={classes.paper} variant="outlined" square>
+                        <p> This is provider context </p>
+                        <p> {provider} </p>
+                    </Paper>
+                </Grid>
             </Grid>
-        </Grid>
         </Suspense>
     );
 }
@@ -103,4 +103,4 @@ const RealTimeChartWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-    `;
+`;
